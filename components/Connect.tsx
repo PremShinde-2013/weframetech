@@ -1,7 +1,7 @@
 'use client';
 import { Card, CardHeader, CardBody, Input, Button } from "@nextui-org/react";
 
-import ConnectImage from "../public/images/BUFFET_037 1.png";
+import ConnectImage from "../public/images/BUFFET.png";
 import EastOutlinedIcon from '@mui/icons-material/EastOutlined';
 import Image from "next/image";
 
