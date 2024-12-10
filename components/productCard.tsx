@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { Key, useState } from "react";
 import { Card, CardBody, Tabs, Tab, Button, Chip } from "@nextui-org/react";
 import Image from "next/image";

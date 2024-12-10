@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 'use client';
 import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Input, Button } from "@nextui-org/react";
 import connectImage from "../public/images/BUFFET_037 1.png";
