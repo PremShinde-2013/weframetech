@@ -15,13 +15,13 @@ import {
 import { Avatar, Chip, Input, Button, Dropdown, Select, SelectItem } from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
 import { siteConfig } from "@/config/site";
-import { SearchIcon } from "@/components/icons";
 import NextLink from "next/link";
 import Image from "next/image";
 import Logo from "../public/images/logo.png";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { SearchIcon } from "lucide-react";
 
 export const languages = [
   { key: "en", label: "EN" },
