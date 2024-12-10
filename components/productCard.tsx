@@ -67,7 +67,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             >
 
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} />
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    />
                                 </div>
 
                             </Tab>
@@ -89,7 +90,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             >
 
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} />
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    />
                                 </div>
 
                             </Tab>
@@ -111,7 +113,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             >
 
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} />
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    />
                                 </div>
 
                             </Tab>
@@ -134,7 +137,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
                                 {/* Display the selected image */}
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} />
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    />
                                 </div>
 
                             </Tab>
