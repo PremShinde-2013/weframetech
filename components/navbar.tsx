@@ -113,8 +113,17 @@ export const Navbar = () => {
         {/* Logo */}
         <NavbarBrand as="li">
           <NextLink href="/" className="flex items-center gap-2">
-            <Image alt="logo" src={Logo} height={40} width={100} className="h-10 w-24" />
+            <div className="relative w-[134px] h-[65px]"> {/* Match the natural aspect ratio */}
+              <Image
+                alt="logo"
+                src={Logo}
+                layout="fill" // Makes the image responsive
+                objectFit="contain" // Ensures the aspect ratio is preserved
+                priority // Optimizes the image loading
+              />
+            </div>
           </NextLink>
+
         </NavbarBrand>
 
 
