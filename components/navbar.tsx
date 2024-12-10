@@ -113,7 +113,7 @@ export const Navbar = () => {
         {/* Logo */}
         <NavbarBrand as="li">
           <NextLink href="/" className="flex items-center gap-2">
-            <Image alt="logo" src={Logo} height={40} width={100} />
+            <Image alt="logo" src={Logo} height={40} width={100} className="h-10 w-24" />
           </NextLink>
         </NavbarBrand>
 
