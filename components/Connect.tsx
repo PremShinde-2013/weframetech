@@ -19,6 +19,8 @@ export default function Connect() {
                         alt="Furniture image"
 
                         className="rounded-2xl"
+                        width={500}
+                        height={300}
                         src={ConnectImage}
                         priority
 

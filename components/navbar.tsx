@@ -1,8 +1,6 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-sort-props */
+
 'use client';
-/* eslint-disable import/order */
-import React, { useMemo, useState } from "react";
+import React from "react";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -14,7 +12,6 @@ import {
 } from "@nextui-org/navbar";
 import { Avatar, Chip, Input, Button, Dropdown, Select, SelectItem } from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
-import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import Image from "next/image";
 import Logo from "../public/images/logo.png";
@@ -22,6 +19,7 @@ import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { SearchIcon } from "lucide-react";
+import AvatarLogo from "../public/images/Avatar.jpg";
 
 export const languages = [
   { key: "en", label: "EN" },
@@ -99,7 +97,7 @@ export const Navbar = () => {
           >
             Panier
           </Button>
-          <Avatar size="md" src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+          <Avatar size="md" src="../public/images/Avatar.jpg" />
           <Select className="w-20" defaultSelectedKeys={["fr"]}>
             {languages.map((language) => (
               <SelectItem key={language.key}>{language.label}</SelectItem>
