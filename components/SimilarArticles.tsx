@@ -61,6 +61,8 @@ export function SimilarArticles() {
                                                 src={furniture1}
                                                 width={270}
                                                 height={160}
+
+                                                priority
                                             />
                                         </CardBody>
                                         <CardFooter className="flex flex-col">

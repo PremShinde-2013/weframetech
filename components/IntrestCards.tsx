@@ -44,6 +44,7 @@ const IntrestCards = (props: Props) => {
                                 src={furniture1} // Replace with a dynamic image source if needed
                                 width={270}
                                 height={160}
+                                priority
                             />
                         </CardBody>
                         <CardFooter className="flex flex-col">
