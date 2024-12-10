@@ -4,9 +4,6 @@ import { Card, CardBody, Tabs, Tab, Button, Chip } from "@nextui-org/react";
 import Image from "next/image";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import productImage1 from "../public/images/Location Cheese big picture 1.png";
-import productImage2 from "../public/images/Location Cheese big picture 2.jpg";
-import productImage3 from "../public/images/Location Cheese big picture 3.jpg";
-import productImage4 from "../public/images/Location Cheese big picture 4.jpg";
 import measure1 from "../public/images/measure1.png";
 import measure2 from "../public/images/measure2.png";
 import { Add, RemoveOutlined } from "@mui/icons-material";
@@ -37,12 +34,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
         if (key === "image1") {
             setSelectedImage(productImage1);
         } else if (key === "image2") {
-            setSelectedImage(productImage2);
+            setSelectedImage(productImage1);
         } else if (key === "image3") {
-            setSelectedImage(productImage3);
+            setSelectedImage(productImage1);
         }
         else if (key === "image4") {
-            setSelectedImage(productImage4);
+            setSelectedImage(productImage1);
         }
     };
 
@@ -80,7 +77,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                 title={
                                     <div className="flex items-center justify-center w-[40px] h-[40px]">
                                         <Image
-                                            src={productImage2}
+                                            src={productImage1}
                                             alt="Product Image 1"
                                             layout="intrinsic"
                                             width={40}
@@ -102,7 +99,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                 title={
                                     <div className="flex items-center justify-center w-[40px] h-[40px]">
                                         <Image
-                                            src={productImage3}
+                                            src={productImage1}
                                             alt="Product Image 1"
                                             layout="intrinsic"
                                             width={40}
@@ -124,7 +121,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                 title={
                                     <div className="flex items-center justify-center w-[40px] h-[40px]">
                                         <Image
-                                            src={productImage4}
+                                            src={productImage1}
                                             alt="Product Image 1"
                                             layout="intrinsic"
                                             width={40}
