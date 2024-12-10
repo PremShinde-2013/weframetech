@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/jsx-sort-props */
+'use client';
+/* eslint-disable import/order */
+import React, { useMemo, useState } from "react";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -7,133 +12,164 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
+import { Avatar, Chip, Input, Button, Dropdown, Select, SelectItem } from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
-import { link as linkStyles } from "@nextui-org/theme";
-import NextLink from "next/link";
-import clsx from "clsx";
-
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-  Logo,
-} from "@/components/icons";
+import { SearchIcon } from "@/components/icons";
+import NextLink from "next/link";
+import Image from "next/image";
+import Logo from "../public/images/logo.png";
+import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+
+export const languages = [
+  { key: "en", label: "EN" },
+  { key: "es", label: "ES" },
+  { key: "fr", label: "FR" },
+  { key: "de", label: "DE" },
+  { key: "it", label: "IT" },
+  { key: "pt", label: "PT" },
+  { key: "zh", label: "ZH" },
+  { key: "ja", label: "JA" },
+  { key: "hi", label: "HI" },
+];
 
 export const Navbar = () => {
   const searchInput = (
     <Input
+      radius="sm"
+      className="flex"
       aria-label="Search"
       classNames={{
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
       endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }
+      placeholder="Rechercher un produit"
       type="search"
     />
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+    <NextUINavbar maxWidth="2xl" position="sticky" className="mt-4 flex flex-wrap">
+      {/* Desktop Navbar */}
+      <NavbarContent className="hidden lg:flex w-full justify-between items-center">
+        {/* Logo */}
+        <NavbarBrand as="li" className="min-w-32">
+          <NextLink href="/" className="flex items-center gap-2">
+            <Image alt="logo" src={Logo} height={65} width={133} />
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
-      </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end"
-      >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
-          <ThemeSwitch />
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden md:flex">
+        {/* Search Bar */}
+        <NavbarItem className="w-full max-w-[700px] mr-20">{searchInput}</NavbarItem>
+
+        {/* Menu Items */}
+        <NavbarItem className="flex items-center gap-4 ">
           <Button
-            isExternal
             as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
+            className="text-sm font-normal text-default-600 "
+            href="/"
+            startContent={<LightbulbOutlinedIcon />}
+            variant="light"
           >
-            Sponsor
+            Inspirations
           </Button>
+          <Button
+            as={Link}
+            className="text-sm font-normal text-default-600"
+            href="/"
+            startContent={<FavoriteBorderOutlinedIcon />}
+            endContent={<Chip size="sm" variant="flat">24</Chip>}
+            variant="light"
+          >
+            Mes favoris
+          </Button>
+          <Button
+            as={Link}
+            className="text-sm font-normal text-white"
+            href="/"
+            startContent={<ShoppingCartOutlinedIcon className="text-white" />}
+            color="primary"
+            variant="solid"
+            radius="sm"
+          >
+            Panier
+          </Button>
+          <Avatar size="md" src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+          <Select className="w-20" defaultSelectedKeys={["fr"]}>
+            {languages.map((language) => (
+              <SelectItem key={language.key}>{language.label}</SelectItem>
+            ))}
+          </Select>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-        <NavbarMenuToggle />
+      {/* Mobile Navbar */}
+      <NavbarContent className="flex lg:hidden w-full justify-between items-center">
+        {/* Logo */}
+        <NavbarBrand as="li">
+          <NextLink href="/" className="flex items-center gap-2">
+            <Image alt="logo" src={Logo} height={40} width={100} />
+          </NextLink>
+        </NavbarBrand>
+
+
+        <Avatar size="md" src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+
+        <NavbarMenuToggle aria-label="Toggle navigation menu" />
       </NavbarContent>
 
+      {/* Mobile Menu */}
       <NavbarMenu>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
+        <div className="mt-4 px-4">{searchInput}</div>
+        <div className="flex flex-col px-4 gap-4">
+          <Button
+            as={Link}
+            aria-label="View inspirations"
+
+            className="text-sm font-normal text-default-600 "
+            href="/"
+            startContent={<LightbulbOutlinedIcon />}
+            variant="light"
+          >
+            Inspirations
+          </Button>
+          <Button
+            as={Link}
+            aria-label="View inspirations"
+
+            className="text-sm font-normal text-default-600 "
+            href="/"
+            startContent={<FavoriteBorderOutlinedIcon />}
+            endContent={<Chip size="sm" variant="flat">24</Chip>}
+            variant="light"
+          >
+            Mes favoris
+          </Button>
+          <Button
+            as={Link}
+            aria-label="View inspirations"
+
+            className="text-sm font-normal text-white"
+            href="/"
+            startContent={<ShoppingCartOutlinedIcon className="text-white" />}
+            color="primary"
+            variant="solid"
+            radius="sm"
+          >
+            Panier
+          </Button>
+
+          <Select className="w-20" defaultSelectedKeys={["fr"]} aria-label="Select language"
+          >
+            {languages.map((language) => (
+              <SelectItem key={language.key}>{language.label}</SelectItem>
+            ))}
+          </Select>
         </div>
       </NavbarMenu>
     </NextUINavbar>
