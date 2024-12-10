@@ -20,9 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     title,
     price,
     reference,
-    dimensions,
-    description,
-    power,
+
 }) => {
     const [selected, setSelected] = useState<string>("photos");
     const [selectedImage, setSelectedImage] = useState(productImage1); // Default image
@@ -66,7 +64,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             >
 
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="lazy"
                                     />
                                 </div>
 
@@ -89,7 +87,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             >
 
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="lazy"
                                     />
                                 </div>
 
@@ -112,7 +110,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                             >
 
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} priority
                                     />
                                 </div>
 
@@ -136,7 +134,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
                                 {/* Display the selected image */}
                                 <div className="flex justify-center items-center md:w-[600px] md:h-[600px] w-[250px] h-[300px] ">
-                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} loading="eager"
+                                    <Image src={selectedImage} alt="Selected Product" width={600} height={600} priority
                                     />
                                 </div>
 
