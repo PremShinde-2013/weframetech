@@ -17,14 +17,12 @@ export default function Connect() {
                 <div className="shadow-sm rounded-3xl">
                     <Image
                         alt="Furniture image"
-
                         className="rounded-2xl"
                         width={500}
                         height={300}
                         src={ConnectImage}
-                        priority
-
-                    />                </div>
+                        loading="lazy"  // This defers loading of the image until it's near the viewport
+                    />              </div>
 
 
             </div>

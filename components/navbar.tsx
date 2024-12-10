@@ -125,7 +125,7 @@ export const Navbar = () => {
         </NavbarBrand>
 
 
-        <Avatar size="md" src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+        <Avatar size="md" src="../public/images/Avatar.jpg" />
 
         <NavbarMenuToggle aria-label="Toggle navigation menu" />
       </NavbarContent>
