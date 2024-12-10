@@ -59,6 +59,8 @@ export default function Banner() {
                                                 width={50}
                                                 height={50}
                                                 className='sm:w-10 sm:h-10'
+                                                priority
+
 
                                             />
                                         </Box>

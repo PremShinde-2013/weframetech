@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-sort-props */
+
 'use client';
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";

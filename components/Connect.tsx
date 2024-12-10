@@ -1,7 +1,9 @@
 'use client';
-import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Input, Button } from "@nextui-org/react";
-import connectImage from "../public/images/BUFFET_037 1.png";
+import { Card, CardHeader, CardBody, Input, Button } from "@nextui-org/react";
+
+import ConnectImage from "../public/images/BUFFET_037 1.png";
 import EastOutlinedIcon from '@mui/icons-material/EastOutlined';
+import Image from "next/image";
 
 export default function Connect() {
     return (
@@ -16,8 +18,9 @@ export default function Connect() {
                     <Image
                         alt="Furniture image"
 
-                        radius="lg"
-                        src={connectImage.src}
+                        className="rounded-2xl"
+                        src={ConnectImage}
+                        priority
 
                     />                </div>
 
